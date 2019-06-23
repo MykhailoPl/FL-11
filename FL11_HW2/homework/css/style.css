@@ -1,0 +1,214 @@
+@media print {
+h2, p {
+text-align : center;
+}
+h2 {
+text-transform : uppercase;
+}
+a {
+color : #000;
+}
+.tm-banner-text {
+letter-spacing : 8px;
+}
+.carousel {
+padding : 0;
+}
+.tm-sidebar {
+display : none;
+}
+#home, #about {
+margin-bottom : 0;
+}
+.tm-main-content {
+padding-top : 0;
+}
+.flex-item.tm-team-img {
+display : none;
+}
+.boxes.gallery-container {
+display : none;
+}
+.carousel-indicators {
+display : none;
+}
+section[class="tm-content-box"] {
+display : none;
+}
+section {
+padding : 0 70px 0 70px;
+}
+.tm-team-description-container {
+max-width : none;
+}
+body {
+background-color : #fff;
+}
+.padding-medium {
+padding : 0;
+}
+.tm-content-box {
+overflow : hidden;
+margin-bottom : 30px;
+}
+li::first-letter {
+color : lightskyblue;
+font-size : 2rem;
+}
+.padding-medium h2 {
+color : lightskyblue;
+font-weight : 300;
+}
+ol {
+list-style-type : none;
+padding-left : 0;
+max-width : 350px;
+margin : 0 auto;
+}
+li:nth-child(even) {
+text-align : right;
+}
+}
+@media screen {
+li[class="box box-bg"]:hover {
+background-color : lightskyblue;
+color : #fff;
+}
+li[class="box box-bg"]:hover h2 {
+color : #fff;
+}
+section, .tm-sidebar, .tm-content-header {
+box-shadow : 0 0 5px rgb(61 55 61 / 0.7);
+}
+.tm-banner {
+background-color : #76cdd8;
+}
+.tm-banner-inner {
+background-color : #fff;
+}
+.tm-banner-text {
+text-shadow : 0 5px 3px lightskyblue, 0 10px 2px lightskyblue;
+letter-spacing : 8px;
+word-spacing : 8px;
+}
+section::before {
+content : '';
+display : block;
+border : transparent solid 20px;
+border-left : 20px solid lightskyblue;
+border-top : 20px solid lightskyblue;
+}
+.padding-medium ol a {
+color : black;
+}
+.padding-medium ol a.text:after {
+content : 'New';
+vertical-align : super;
+color : red;
+font-weight : bold;
+font-size : 10px;
+}
+.padding-medium ol a:visited {
+color : #ffb347;
+}
+.padding-medium ol a:hover {
+text-decoration : none;
+font-weight : bold;
+border-left : 3px solid #ffb347;
+padding-left : 2px;
+color : #ffb347;
+}
+.padding-medium ol {
+list-style-type : lower-roman;
+}
+.padding-medium h2 {
+color : lightskyblue;
+text-align : center;
+}
+.blocks h2.tm-section-title {
+text-align : left;
+}
+li[class="box box-work"] {
+padding : 10px;
+}
+li[class="box box-work"]:nth-child(even) {
+background : #ECEFF1;
+}
+li[class="box box-work"] p:first-letter {
+font-size : 30px;
+}
+h2 + p {
+font-style : italic;
+text-indent : 25px;
+line-height : 35px;
+}
+li[class="box box-work"] p {
+text-indent : 0;
+line-height : normal;
+}
+#contact_email, #contact_subject, #contact_name {
+border-radius : 3px;
+border : none;
+border-bottom : 2px solid lightskyblue;
+}
+#contact_subject:focus, #contact_name:focus, #contact_email:focus, #contact_message:focus {
+background-color : lightskyblue;
+}
+#contact_message {
+resize : none;
+border : lightskyblue solid 2px;
+border-radius : 3px;
+}
+.mandatory-field::after {
+content : "";
+background : url(../img/email-icon.png) no-repeat;
+background-size : 30px;
+background-position : right;
+top : 4px;
+width : 30px;
+height : 30px;
+}
+button[type] {
+background-color : #fff;
+border : lightskyblue solid 2px;
+color : lightskyblue;
+border-radius : 0;
+font-size : 20px;
+float : right;
+width : 180px;
+height : 60px;
+}
+button[type]:hover {
+background-color : lightskyblue;
+border : lightskyblue solid 2px;
+color : #fff;
+}
+.tm-nav-item a:hover {
+background-color : #ECEFF1;
+}
+.tm-team-description-container {
+display : flex;
+flex-direction : column;
+justify-content : center;
+}
+.flex-2-col {
+display : flex;
+}
+#contact h2 {
+text-align : left;
+}
+.tm-banner-text {
+animation-name : rotate;
+animation-duration : 2s;
+animation-iteration-count : infinite;
+animation-direction : alternate;
+}
+}
+@keyframes rotate {
+from {
+transform : scaleX(-1);
+}
+to {
+transform : scaleX(1);
+}
+}
