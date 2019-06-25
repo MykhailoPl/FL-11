@@ -1,0 +1,246 @@
+
+
+@mixin position-hi-liter-first-card {
+              width: 190px;
+              height: 12px;
+              left: 0;
+              bottom: 0;
+}
+@mixin position-hi-liter-second-card {
+                width: 160px;
+                height: 12px;
+                left: 0;
+                bottom: 0;
+}
+@mixin position-hi-liter-third-card {
+                width: 125px;
+                height: 12px;
+                left: 0;
+                bottom: 0;
+}
+@mixin hi-liter($height, $width, $bottom, $left){
+  &::before {
+    content: "";
+    background: $color-hi-liter;
+    position: absolute;
+    z-index: -1;
+    height: $height;
+    width: $width;
+    bottom: $bottom;
+    left: $left;
+  }
+}
+@mixin button{
+  color: $color-font-button;
+  background-color: $color-button;
+  padding: 15px 45px;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 4px;
+  font-family: $font-button;
+}
+
+$hi-li-header:(
+"height":20px,
+ "width":270px,
+ "bottom":3px,
+ "left":1px);
+
+ .class-for-hi-liter{
+   position: relative;
+   z-index: 10;
+ }
+
+body {
+  background-color: $color-backg;
+  margin: 0px 40px;
+  font-family: $font-normal;
+  font-weight: 400;
+  color: $color-font;
+}
+header, main, footer {
+  padding: 5px 130px;
+}
+.landing-logo {
+  img {
+    margin-bottom: 1px;
+  }
+  p {
+    margin-left: 12px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: $font-logo;
+  }
+  span {
+    margin-top: -4px;
+    display: block;
+    font-size: 13px;
+  }
+}
+.header {
+  padding-right: 50%;
+  padding-bottom: 140px;
+  border-radius:0 0 50%/50% 0;
+  background-image: $img-beackground-header;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+
+  .header_heading {
+    font-size: 64px;
+    font-weight: 730;
+    font-family: $font-header;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 42px;
+    @extend .class-for-hi-liter;
+    @include hi-liter(map-get($hi-li-header, "height"),map-get($hi-li-header, "width"),map-get($hi-li-header, "bottom"),map-get($hi-li-header, "left"));
+  }
+  .header_text {
+    margin-bottom: 40px;
+
+  }
+}
+.header_button {
+  @include button;
+}
+main.section {
+  padding-bottom: 180px;
+  position: relative;
+  text-align: center;
+  background: $color-backg;
+  p.section_text {
+    @extend .class-for-hi-liter;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    font-family:$font-H2;
+    @include hi-liter(13px, 180px, 8px, 214px);
+  }
+}
+.section_card_wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.section_card_underline{
+  content: "";
+  background: $color-hi-liter;
+  position: absolute;
+  z-index: -1;
+  width: 57px;
+  height: 10px;
+  left: 114px;
+  bottom: 4px;
+}
+.section_card {
+  display: inline-block;
+  padding: 14px;
+  border-radius: 4px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background: $color-backg-block;
+  color: $color-text-block;
+  width: 30%;
+  img.section_card_img {
+    width: 100%;
+    border-radius: 4px;
+  }
+  p.section_card_heading {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    display: inline-block;
+    color: $color-heading-block;
+    font-family: $font-H2;
+  @extend .class-for-hi-liter;
+  }
+  &:nth-child(1) .section_card_underline {
+    @include position-hi-liter-first-card;
+  }
+  &:nth-child(2) .section_card_underline {
+    @include position-hi-liter-second-card;
+  }
+  &:nth-child(3) .section_card_underline {
+    @include position-hi-liter-third-card;
+  }
+  p.section_card_text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.section_banner {
+  border-radius: 4px;
+  width: 60%;
+  margin: auto;
+  background: linear-gradient(-270deg, $color-button 20%, $color-hi-liter 80%);
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -70px;
+  p {
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  .section_banner_text_wrap {
+    float: left;
+    text-align: left;
+  }
+  .section_banner_heading {
+    @extend .class-for-hi-liter;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: $font-usual;
+    @include hi-liter(10px, 65px, 4px, 120px);
+  }
+  .section_banner_text {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: $color-text-block;
+    font-family: $font-normal;
+  }
+  .section_banner_button {
+    @include button;
+    float: right;
+    margin-top: 15px;
+  }
+}
+footer {
+  background: $color-backg-block;
+  color: $color-text-block;
+  padding-bottom: 20px;
+  padding-top: 80px;
+}
+.footer-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  div, p, span {
+    display: inline-block;
+  }
+  p.footer_text {
+    width: 40%;
+    font-family: $font-normal;
+  }
+}
+.footer_logo.landing-logo {
+  @extend .landing-logo;
+  width: 20%;
+}
