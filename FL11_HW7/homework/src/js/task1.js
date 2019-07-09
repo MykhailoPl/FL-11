@@ -1,6 +1,7 @@
 
 let login, password, passNew;
-let user = 'user@gmail.com', admin = 'admin@gmail.com', passAdmin ='AdminPass', passUser = 'UserPass', SIX=6, FIVE=5;
+let user = 'user@gmail.com', admin = 'admin@gmail.com', passAdmin ='AdminPass', passUser = 'UserPass'; 
+const SIX=6, FIVE=5;
 login = prompt('email');
 if(login===null||login===''){
   alert('Canceled');

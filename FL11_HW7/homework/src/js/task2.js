@@ -1,4 +1,5 @@
-let prizBase=100, total=0, baseGuess=8, x=3, TWO=2, FOUR=4, ONE=1, ZERO=0, EIGTH=8, FIVESCORE=100;
+let prizBase=100, total=0, baseGuess=8, x=3;
+const TWO=2, FOUR=4, ONE=1, ZERO=0, EIGTH=8, FIVESCORE=100;
 let attempt, guess, prize, numeric;
 if(confirm('Do you want to play a game')){
 for(attempt=x;attempt;attempt--){
