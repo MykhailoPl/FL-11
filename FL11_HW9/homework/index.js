@@ -152,11 +152,11 @@ function showFormattedDate(date){
   ];
 function getAmountOfAdultPeople(data) {
       let age = 18;
-      let year = 365;
+      const year = 365;
       function old (p) {
           let e = Date.parse(p[' birthday '])
-          let d = daysBetween(new Date(), e);
-          return d / year > age;
+          let dAge = daysBetween(new Date(), e);
+          return dAge / year > age;
       }
       let y = filterArray(data, old);
   return y.length;
@@ -167,8 +167,10 @@ function getAmountOfAdultPeople(data) {
 
 function keys (object){
   let k = [];
-  for (let property in object) {
-        k.push(property)
+  for (let i in object) {
+    if (object.hasOwnProperty(i)) {
+        k.push(i)
+      }
       }
   return k
 }
@@ -178,8 +180,10 @@ function keys (object){
 
 function values (object){
     let val = [];
-    for (let property in object) {
-          val.push(object[property])
+    for (let i in object) {
+      if (object.hasOwnProperty(i)) {
+          val.push(object[i])
+          }
     }
     return val
 }
